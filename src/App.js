@@ -1,10 +1,25 @@
-
+import Accordion from './components/Accordion';
 
 function App() {
+  const items = [
+    {
+      id: '7845',
+      label: 'Accordion one label',
+      content: 'Accordion one content, Accordion one content, Accordion one content, Accordion one content, Accordion one content,  '
+    },
+    {
+      id: '6487',
+      label: 'Accordion two label',
+      content: 'Accordion two content, Accordion two content, Accordion two content, Accordion two content, Accordion two content,  '
+    },
+    {
+      id: '9524',
+      label: 'Accordion three label',
+      content: 'Accordion three content, Accordion three content, Accordion three content, Accordion three content, Accordion three content,  '
+    },
+  ];
   return (
-    <h1 className="text-3xl font-bold underline text-red-500 my-5 mx-5">
-    Hello world!
-  </h1>
+    <Accordion items={items} />
   );
 }
 
