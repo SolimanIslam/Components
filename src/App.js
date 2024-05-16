@@ -20,6 +20,10 @@ function App() {
   ];
   return (
     <Accordion items={items} />
+    
+
+
+
   );
 }
 
