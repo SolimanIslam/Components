@@ -11,12 +11,8 @@ function Accordion({ items }) {
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   const toggleContent = (index) => {
-    setExpandedIndex((currentExpandedIndex) => {
-      if (currentExpandedIndex === index) {
-        return -1;
-      } else {
-        return index;
-      }
+    setExpandedIndex((currentExpandedIndex)=>{
+      return currentExpandedIndex === index? -1 : index;
     });
   };
 
@@ -49,3 +45,4 @@ function Accordion({ items }) {
 }
 
 export default Accordion;
+
