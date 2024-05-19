@@ -6,7 +6,6 @@ function App() {
   const [selected, setSelected] = useState(null);
   const handleSelected = (option) =>{
     setSelected(option);
-    console.log('updated');
   };
 
   const options = [
