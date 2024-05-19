@@ -39,7 +39,7 @@ function DropDown({ options, value, onChange }) {
               }
         };
 
-        document.addEventListener('click', outsideDropMenuHandler);
+        document.addEventListener('click', outsideDropMenuHandler, true);
 
         return () => { document.removeEventListener('click', outsideDropMenuHandler) };
     }, []);
