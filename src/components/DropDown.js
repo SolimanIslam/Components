@@ -25,12 +25,16 @@ function DropDown({ options, value, onChange }) {
     };
 
     const handleOptionClicks = (option) => {
+        console.log('menu click: ',performance.now());
+
         setIsOpen(false);
         onChange(option);
     };
-
+    console.log('rerender: ',performance.now());
     useEffect(() => {
         const outsideDropMenuHandler = (event) => {
+            console.log('document CLick: ' ,performance.now());
+
             if (!divEl.current.contains(event.target)) {
                 console.log('outside');
                 setIsOpen(false);
@@ -41,12 +45,14 @@ function DropDown({ options, value, onChange }) {
 
         document.addEventListener('click', outsideDropMenuHandler, true);
 
-        return () => { document.removeEventListener('click', outsideDropMenuHandler) };
+        return () => { document.removeEventListener('click', outsideDropMenuHandler , true) };
     }, []);
 
-
-
     
+
+
+
+
 
     const icon = <div>{isOpen ? <GoChevronDown /> : <GoChevronLeft />}</div>;
     return (

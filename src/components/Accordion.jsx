@@ -1,10 +1,5 @@
 import { useState } from 'react';
 import { GoChevronDown, GoChevronLeft } from 'react-icons/go';
-const labelStyling = 'flex justify-between p-3 bg-gray-50 border-b items-center cursor-pointer';
-const contentStyling = 'border-b p-5';
-const renderedCompStyling = 'border-x border-t rounded';
-
-
 
 function Accordion({ items }) {
 
@@ -24,21 +19,21 @@ function Accordion({ items }) {
     return <div key={item.id}>
 
       <div
-        className={labelStyling}
+        className="flex justify-between p-3 bg-gray-50 border-b items-center cursor-pointer"
         onClick={() => { toggleContent(index); }}>{item.label}
         {icon}
       </div>
 
 
       {expanded &&
-        <div className={contentStyling}>
+        <div className="border-b p-5">
           {item.content}
         </div>}
 
     </div>
   });
   return (
-    <div className={renderedCompStyling}>
+    <div className="border-x border-t rounded">
       {renderedComponent}
     </div>
   );

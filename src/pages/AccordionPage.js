@@ -1,34 +1,28 @@
-import Accordion from './components/Accordion';
-
+import Accordion from '../components/Accordion';
 
 function AccordionPage() {
   const items = [
     {
-      id: '7845',
-      label: 'Accordion one label',
-      content: 'Accordion one content, Accordion one content, Accordion one content, Accordion one content, Accordion one content,  '
+      id: 'l2kj5',
+      label: 'Can I use React on a project?',
+      content:
+        'You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.',
     },
     {
-      id: '6487',
-      label: 'Accordion two label',
-      content: 'Accordion two content, Accordion two content, Accordion two content, Accordion two content, Accordion two content,  '
+      id: 'lk2j35lkj',
+      label: 'Can I use Javascript on a project?',
+      content:
+        'You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.',
     },
     {
-      id: '9524',
-      label: 'Accordion three label',
-      content: 'Accordion three content, Accordion three content, Accordion three content, Accordion three content, Accordion three content,  '
+      id: 'l1kj2i0g',
+      label: 'Can I use CSS on a project?',
+      content:
+        'You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.',
     },
   ];
-  
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      <Accordion items={items} />
-      
-    </div>
 
-  );
+  return <Accordion items={items} />;
 }
 
 export default AccordionPage;
-
