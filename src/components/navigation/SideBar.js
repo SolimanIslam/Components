@@ -4,8 +4,9 @@ import Link from "./Link";
 function SideBar() {
     const paths = [
         { label: 'DropDown', path: '/' },
-        { label: 'Accordion', path: '/Accordion' },
-        { label: 'ButtonPage', path: '/Buttons' }
+        { label: 'Accordion', path: '/accordion' },
+        { label: 'ButtonPage', path: '/buttons' } ,
+        { label: 'ModalPage', path: '/modal' }
     ];
 
     const renderedComponents = paths.map((pathItem) => {
@@ -19,7 +20,7 @@ function SideBar() {
     });
 
     return <div
-        className="sticky top-0 overflow-y-scroll flex flex-col items-start">
+        className="sticky top-0 overflow-y-scroll flex flex-col items-start ">
         {renderedComponents}
     </div>
 }
