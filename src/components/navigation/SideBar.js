@@ -5,8 +5,9 @@ function SideBar() {
     const paths = [
         { label: 'DropDown', path: '/' },
         { label: 'Accordion', path: '/accordion' },
-        { label: 'ButtonPage', path: '/buttons' } ,
-        { label: 'ModalPage', path: '/modal' }
+        { label: 'Buttons', path: '/buttons' } ,
+        { label: 'Modal', path: '/modal' }, 
+        { label: 'Table', path: '/table' }
     ];
 
     const renderedComponents = paths.map((pathItem) => {

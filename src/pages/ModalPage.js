@@ -155,9 +155,6 @@ function ModalPage() {
         </Button>
 
     </div>
-
-
-
 }
 
 export default ModalPage;
