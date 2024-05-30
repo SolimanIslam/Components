@@ -33,11 +33,11 @@ const data = [
     }
 
     return <div>
-        <Table
+        {/* <Table
             data={data}
             config={config}
             keyFn={keyFn}
-        />
+        /> */}
 
         <SortableTable
             data={data}
@@ -49,47 +49,3 @@ const data = [
 
 export default TablePage;
 
-// import Table from "../components/Table";
-// import SortableTable from "../components/SortableTable";
-
-// function TablePage() {
-
-//     const rowsData = [
-//         { name: 'Lime', color: 'bg-green-500', score: 4 },
-//         { name: 'Orange', color: 'bg-orange-500', score: 5 },
-//         { name: 'Apple', color: 'bg-red-500', score: 3 },
-//         { name: 'Banana', color: 'bg-yellow-500', score: 1 },
-//         { name: 'Cherry', color: 'bg-red-700', score: 2.5 },
-//     ];
-
-//     const columnsConfig = [
-//         {
-//             label: 'Name',
-//             render: (row) => row.name,
-//             sortValue: (row) => row.name
-//         },
-//         {
-//             label: 'Color',
-//             render: (row) => <div className={`p-3 m-2 ${row.color}`} ></div>,
-//         },
-//         {
-//             label: 'Score',
-//             render: (row) => row.score,
-//             sortValue: (row) => row.score,
-//         },
-
-//     ];
-
-//     const rowKeyFn = (row) => {
-//         return row.name;
-//     }
-
-//     return <div>
-//         <SortableTable data={rowsData} config={columnsConfig} rowKeyFn={rowKeyFn} />
-//         <br/>
-//         <Table rowsData={rowsData} columnsConfig={columnsConfig} rowKeyFn={rowKeyFn} />
-
-//     </div>
-// }
-
-// export default TablePage;

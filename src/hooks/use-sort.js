@@ -2,31 +2,37 @@ import { useState } from "react";
 
 function useSort(data, config) {
 
-    const [sortedCol, setSortedCol] = useState(null);
+    const [sortBy, setSortBy] = useState(null);
     const [sortOrder, setSortOrder] = useState(null);
 
+   
+
     const setSortColumn = (label) => {
-        if (sortedCol !== label) {
-            setSortOrder('asc');
-            setSortedCol(label);
+        if (sortBy && label !== sortBy) {
+          setSortOrder('asc');
+          setSortBy(label);
+          
+          return;
         }
+    
         if (sortOrder === null) {
-            setSortOrder('asc');
-            setSortedCol(label);
+          setSortOrder('asc');
+          setSortBy(label);
+                   
         } else if (sortOrder === 'asc') {
-            setSortOrder('desc');
-            setSortedCol(label);
-        }
-        else if (sortOrder === 'desc') {
-            setSortOrder(null);
-            setSortedCol(label);
-        }
-    };
+          setSortOrder('desc');
+          setSortBy(label);
+          
+        } else if (sortOrder === 'desc') {
+          setSortOrder(null);
+          setSortBy(null);
+               }
+      };
 
 
     let sortedData = data;
-    if (sortedCol && sortOrder) {
-        const { sortValue } = config.find(column => column.label === sortedCol);
+    if (sortBy && sortOrder) {
+        const { sortValue } = config.find((column) => column.label === sortBy);
         sortedData = SortingArrOfObjs(data, sortValue, sortOrder);
 
     }
@@ -35,7 +41,7 @@ function useSort(data, config) {
 
     return {
         setSortColumn,
-        sortedCol,
+        sortBy,
         sortOrder,
         sortedData
     };

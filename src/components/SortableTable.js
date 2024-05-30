@@ -4,15 +4,16 @@ import useSort from "../hooks/use-sort";
 
 function SortableTable({ data, config, ...rest }) {
 
-    const { setSortColumn, sortedCol, sortOrder, sortedData } = useSort(data, config);
+    const { setSortColumn, sortBy, sortOrder, sortedData } = useSort(data, config);
 
     const undatedConfig = config.map(column => {
         if (!column.sortValue) return column;
         return {
             ...column,
             header: () => {
-                return <th className="flex items-center" onClick={() => { setSortColumn(column.label) }}>
-                    {getIcons(sortedCol, sortOrder, column.label)}
+                return <th className="flex items-center" onClick={() => { 
+                    setSortColumn(column.label) }}>
+                    {getIcons(sortBy, sortOrder, column.label)}
                     {column.label}
                 </th>
             }
@@ -31,8 +32,8 @@ export default SortableTable;
 
 
 
-const getIcons = (sortedCol, sortOrder, label) => {
-    if (label !== sortedCol) {
+const getIcons = (sortBy, sortOrder, label) => {
+    if (label !== sortBy) {
         return <div>
             <GoChevronUp />
             <GoChevronDown />
